@@ -1,10 +1,13 @@
 package ro.ase.acs.sql.classes;
 
+import ro.ase.acs.sql.Interfaces.Creator;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TableCreator {
+public class TableCreator implements Creator {
+    @Override
     public  void createTable(Connection connection) throws SQLException {
         String sqlDrop = "DROP TABLE IF EXISTS employees";
         String sqlCreate = "CREATE TABLE employees(id INTEGER PRIMARY KEY,"
